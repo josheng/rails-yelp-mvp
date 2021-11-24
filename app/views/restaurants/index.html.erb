@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>List of Restaurant</h1>
+  <ul class="list-group">
+  <% @restaurants.each do |place| %>
+    <%= link_to "#{place.name}: #{place.category.capitalize}", restaurant_path(place), class: "list-group-item"  %>
+  <% end %>
+  </ul>
+</div>

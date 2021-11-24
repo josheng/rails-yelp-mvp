@@ -1,0 +1,15 @@
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= @restaurant.name %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @restaurant.category.capitalize %></h6>
+    <p class="card-text"><%= @restaurant.address %></p>
+    <% @restaurant.reviews.each do |review| %>
+    <h5 class="card-subtitle mb-2">Reviews:</h6>
+    <ul>
+    <li><p class="card-text"><%= review.content %><br>Rating: <%= review.rating %></p></li>
+    </ul>
+    <% end %>
+  </div>
+</div>
+<p><%= link_to "Go Back", root_path  %> | <%= link_to "Leave a Review", new_restaurant_review_path(@restaurant) %></p>
